@@ -345,6 +345,7 @@ class OpenAIClient(AIClient):
             "deprecated" in lowered
             or "not support" in lowered
             or "unsupported" in lowered
+            or "only 1 is allowed" in lowered   # Kimi / Moonshot reasoning models
         )
 
     @staticmethod
