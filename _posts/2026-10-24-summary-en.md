@@ -5,7 +5,7 @@ date: 2026-10-24
 lang: en
 ---
 
-> From 12 items, 2 important content pieces were selected
+> From 10 items, 2 important content pieces were selected
 
 ---
 
