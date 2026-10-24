@@ -4,11 +4,11 @@
     "model": "kimi-k3",
     "api_key_env": "OPENAI_API_KEY",
     "base_url": "https://api.moonshot.ai/v1",
-    "temperature": 0.3,
+    "temperature": 1,
     "max_tokens": 409600,
     "throttle_sec": 0,
-    "analysis_concurrency": 6,
-    "enrichment_concurrency": 4,
+    "analysis_concurrency": 4,
+    "enrichment_concurrency": 2,
     "languages": [
       "en"
     ]
