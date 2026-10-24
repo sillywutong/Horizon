@@ -1,10 +1,11 @@
 {
   "ai": {
     "provider": "openai",
-    "model": "gpt-5-mini",
+    "model": "kimi-k3",
     "api_key_env": "OPENAI_API_KEY",
+    "base_url": "https://api.moonshot.ai/v1",
     "temperature": 0.3,
-    "max_tokens": 409600000,
+    "max_tokens": 409600,
     "throttle_sec": 0,
     "analysis_concurrency": 6,
     "enrichment_concurrency": 4,
