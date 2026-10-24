@@ -1,0 +1,401 @@
+{
+  "ai": {
+    "provider": "openai",
+    "model": "gpt-5-mini",
+    "api_key_env": "OPENAI_API_KEY",
+    "temperature": 0.3,
+    "max_tokens": 409600000,
+    "throttle_sec": 0,
+    "analysis_concurrency": 6,
+    "enrichment_concurrency": 4,
+    "languages": [
+      "en"
+    ]
+  },
+  "processing": {
+    "profiles_dir": "profiles",
+    "default_profile": "adtech",
+    "profile_settings": {
+      "adtech": {
+        "threshold": 7.0,
+        "topic_dedup": true
+      },
+      "tech-blog": {
+        "threshold": 6.0,
+        "topic_dedup": false
+      },
+      "finance-news": {
+        "threshold": 7.0,
+        "topic_dedup": true
+      },
+      "baijing": {
+        "threshold": 5.0,
+        "topic_dedup": true
+      },
+      "adtech-practical": {
+        "threshold": 7.0,
+        "topic_dedup": true
+      },
+      "recsys": {
+        "threshold": 6.0,
+        "topic_dedup": true
+      },
+      "ai-agentic": {
+        "threshold": 7.0,
+        "topic_dedup": true
+      },
+      "ai-deepdive": {
+        "threshold": null,
+        "topic_dedup": false
+      },
+      "economics": {
+        "threshold": null,
+        "topic_dedup": false
+      }
+    }
+  },
+  "display": {
+    "icon_style": "emoji"
+  },
+  "sources": {
+    "rss": [
+      {
+        "name": "MDM by Eric Seufert Mini RSS",
+        "url": "https://mdm.co/mdm.rss",
+        "enabled": true,
+        "category": "adtech",
+        "profile": "adtech",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "AdExchanger: News and Views on Data-Driven Digital Advertising",
+        "url": "https://www.adexchanger.com/feed/",
+        "enabled": true,
+        "category": "adtech",
+        "profile": "adtech",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Marketing – Digiday",
+        "url": "https://digiday.com/marketing/feed/",
+        "enabled": true,
+        "category": "adtech",
+        "profile": "adtech",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Media – Digiday",
+        "url": "https://digiday.com/media/feed/",
+        "enabled": true,
+        "category": "adtech",
+        "profile": "adtech",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Digiday",
+        "url": "https://digiday.com/feed/",
+        "enabled": true,
+        "category": "adtech",
+        "profile": "adtech",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "AdWeek: AdFreak",
+        "url": "https://feeds.feedburner.com/Adfreak",
+        "enabled": true,
+        "category": "adtech",
+        "profile": "adtech",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "moz (en-US)",
+        "url": "https://moz.com/feeds/blog.rss",
+        "enabled": true,
+        "category": "practical",
+        "content_extractor": "trafilatura",
+        "profile": "adtech-practical"
+      },
+      {
+        "name": "Smart Insights",
+        "url": "https://www.smartinsights.com/feed/",
+        "enabled": true,
+        "category": "marketing",
+        "content_extractor": "trafilatura",
+        "profile": "adtech"
+      },
+      {
+        "name": "Neil Patel",
+        "url": "https://neilpatel.com/feed/",
+        "enabled": true,
+        "category": "practical",
+        "content_extractor": "trafilatura",
+        "profile": "adtech-practical"
+      },
+      {
+        "name": "Marketing Brew",
+        "url": "https://www.marketingbrew.com/feed.xml",
+        "enabled": true,
+        "category": "marketing",
+        "content_extractor": "trafilatura",
+        "profile": "adtech"
+      },
+      {
+        "name": "白鲸社区",
+        "url": "https://www.baijing.cn/rss",
+        "enabled": true,
+        "category": "baijing",
+        "content_extractor": "trafilatura",
+        "profile": "baijing"
+      },
+      {
+        "name": "白鲸出海",
+        "url": "https://wechat2rss.bestblogs.dev/feed/2b8f03a73a0f2ac92a8ca69c124e5be6f442dbdc.xml",
+        "enabled": true,
+        "category": "baijing",
+        "content_extractor": "trafilatura",
+        "profile": "baijing"
+      },
+      {
+        "name": "Ad Tech Explained",
+        "url": "https://rss.beehiiv.com/feeds/5Ukl7fJGbM.xml",
+        "enabled": true,
+        "category": "adtech",
+        "profile": "adtech",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Shopper Marketing",
+        "url": "https://www.adweek.com/taxonomy/term/4167/all/feed/",
+        "enabled": true,
+        "category": "marketing",
+        "content_extractor": "trafilatura",
+        "profile": "adtech"
+      },
+      {
+        "name": "小红书技术REDtech",
+        "url": "https://wechat2rss.bestblogs.dev/feed/0f8c47df6fd304112518544776e0bbf1d98ba0b9.xml",
+        "enabled": true,
+        "category": "recsys",
+        "profile": "recsys",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "ML Applications - Engineering at Meta",
+        "url": "https://engineering.fb.com/category/ml-applications/feed/",
+        "enabled": true,
+        "category": "recsys",
+        "profile": "recsys",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "The latest research from Google",
+        "url": "https://research.google/blog/rss/",
+        "enabled": true,
+        "category": "recsys",
+        "profile": "recsys",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Homepage | Amazon Science",
+        "url": "https://www.amazon.science/index.rss",
+        "enabled": true,
+        "category": "recsys",
+        "profile": "recsys",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "美团技术团队",
+        "url": "https://tech.meituan.com/rss.xml",
+        "enabled": true,
+        "category": "recsys",
+        "profile": "recsys",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Latent Space",
+        "url": "https://latent.space/feed",
+        "enabled": true,
+        "category": "ai-agentic",
+        "profile": "ai-agentic",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Interconnects",
+        "url": "https://www.interconnects.ai/feed",
+        "enabled": true,
+        "category": "ai-agentic",
+        "profile": "ai-agentic",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "sebastianraschka.com",
+        "url": "https://sebastianraschka.com/rss_feed.xml",
+        "enabled": true,
+        "category": "ai-deepdive",
+        "profile": "ai-deepdive",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Lil'Log",
+        "url": "https://lilianweng.github.io/index.xml",
+        "enabled": true,
+        "category": "ai-deepdive",
+        "profile": "ai-deepdive",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Pluralistic: Daily links from Cory Doctorow",
+        "url": "https://pluralistic.net/feed/",
+        "enabled": true,
+        "category": "economics",
+        "profile": "economics",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Construction Physics",
+        "url": "https://www.construction-physics.com/feed",
+        "enabled": true,
+        "category": "economics",
+        "profile": "economics",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Martin Alderson",
+        "url": "https://martinalderson.com/feed.xml",
+        "enabled": true,
+        "category": "economics",
+        "profile": "economics",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "FUDGE.JP",
+        "url": "https://fudge.jp/feed/",
+        "enabled": false,
+        "category": "fashion",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "1LDK apartments.｜NONE-DAILY LIFE IN THE DAILY LIFE",
+        "url": "https://1ldkshop.com/blog-a/?feed=rss2",
+        "enabled": false,
+        "category": "fashion",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "カーサ ブルータス Casa BRUTUS |",
+        "url": "https://casabrutus.com/travel/feed",
+        "enabled": false,
+        "category": "fashion",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "BRUTUS.jp | ブルータスのウェブ",
+        "url": "https://brutus.jp/feed/",
+        "enabled": false,
+        "category": "fashion",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "POPEYE Web",
+        "url": "https://popeyemagazine.jp/feed/podcast",
+        "enabled": false,
+        "category": "fashion",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "1LDK｜NONE-DAILY LIFE IN THE DAILY LIFE",
+        "url": "https://1ldkshop.com/blog/?feed=rss2",
+        "enabled": false,
+        "category": "fashion",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "つけ麺食べたい！",
+        "url": "https://tsukemen-tabetai.com/tsukemen/feed",
+        "enabled": false,
+        "category": "food",
+        "content_extractor": "trafilatura"
+      }
+    ],
+    "hackernews": {
+      "enabled": false,
+      "fetch_top_stories": 20,
+      "min_score": 100
+    }
+  },
+  "collection": {
+    "time_window_hours": 24
+  },
+  "digest": {
+    "max_items": 20,
+    "profile_order": [
+      "adtech",
+      "adtech-practical",
+      "baijing",
+      "recsys",
+      "ai-deepdive",
+      "ai-agentic",
+      "economics"
+    ],
+    "category_groups": {
+      "adtech": {
+        "name": "AdTech",
+        "limit": 6,
+        "categories": [
+          "adtech"
+        ]
+      },
+      "marketing": {
+        "name": "Marketing",
+        "limit": 4,
+        "categories": [
+          "marketing"
+        ]
+      },
+      "recsys": {
+        "name": "RecSys",
+        "limit": 3,
+        "categories": [
+          "recsys"
+        ]
+      },
+      "ai_agentic": {
+        "name": "AI/Agentic",
+        "limit": 2,
+        "categories": [
+          "ai-agentic"
+        ]
+      },
+      "economics": {
+        "name": "Economics",
+        "limit": 2,
+        "categories": [
+          "economics"
+        ]
+      },
+      "baijing": {
+        "name": "白鲸出海/白鲸社区",
+        "limit": 2,
+        "categories": [
+          "baijing"
+        ]
+      },
+      "practical": {
+        "name": "Moz / Neil Patel",
+        "limit": 3,
+        "categories": [
+          "practical"
+        ]
+      },
+      "ai_deepdive": {
+        "name": "Lil'Log / Raschka",
+        "limit": 5,
+        "categories": [
+          "ai-deepdive"
+        ]
+      }
+    },
+    "default_group": "other",
+    "default_group_limit": 2
+  }
+}
