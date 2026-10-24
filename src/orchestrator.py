@@ -299,6 +299,7 @@ class HorizonOrchestrator:
                 analyzed_items,
             )
             important_items = filtering_result.items
+            self._print_analysis_report(analyzed_items, important_items)
 
             # Show per-sub-source selection breakdown
             selected_counts: Dict[str, int] = defaultdict(int)
@@ -892,6 +893,48 @@ class HorizonOrchestrator:
             balanced_digest=balanced,
             eligible_count=len(eligible),
         )
+        def _print_analysis_report(
+        self,
+        analyzed: List[ContentItem],
+        selected: List[ContentItem],
+    ) -> None:
+        """Print score, threshold, and filter outcome for every analyzed item (no AI calls)."""
+        selected_ids = {item.id for item in selected}
+
+        def score_of(item: ContentItem) -> float:
+            a = item.processing.analysis if item.processing else None
+            return a.score if a and a.score is not None else -1
+
+        self.console.print("[bold]📋 Analysis report[/bold]")
+        for item in sorted(analyzed, key=score_of, reverse=True):
+            analysis = item.processing.analysis if item.processing else None
+            classification = getattr(item.processing, "classification", None) if item.processing else None
+            profile = getattr(classification, "profile", None) or "-"
+            settings = self.config.processing.profile_settings.get(profile)
+            threshold = settings.threshold if settings else None
+            score = analysis.score if analysis else None
+
+            if item.id in selected_ids:
+                status = "✅ selected"
+            elif score is None:
+                status = "⚠️ analysis failed"
+            elif not self.passes_profile_filter(item):
+                status = "❌ below threshold"
+            else:
+                status = "➖ dedup / quota"
+
+            score_str = f"{score:.1f}" if score is not None else "—"
+            thr_str = f"{threshold:.1f}" if threshold is not None else "none"
+            feed = self._sub_source_label(item)
+            category = item.metadata.get("category", "-")
+            self.console.print(
+                f"  [{score_str}/{thr_str}] {status} | {profile} | {category} | {feed}\n"
+                f"      {item.title}"
+            )
+            reason = (getattr(analysis, "reason", "") or "") if analysis else ""
+            if reason:
+                self.console.print(f"      [dim]reason: {reason[:200]}[/dim]")
+        self.console.print("")
 
     def passes_profile_filter(
         self,
