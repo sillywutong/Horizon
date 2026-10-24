@@ -292,6 +292,7 @@ class RSSSourceConfig(BaseModel):
     category: Optional[str] = None
     content_extractor: Optional[str] = None
     profile: ProfileRoute = None
+    exclude_title_keywords: List[str] = Field(default_factory=list)
 
 
 class RedditSubredditConfig(BaseModel):

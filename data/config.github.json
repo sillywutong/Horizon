@@ -1,16 +1,15 @@
 {
   "ai": {
-    "provider": "openai",
-    "model": "kimi-k3",
-    "api_key_env": "OPENAI_API_KEY",
-    "base_url": "https://api.moonshot.ai/v1",
-    "temperature": 1,
-    "max_tokens": 409600,
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "api_key_env": "ANTHROPIC_API_KEY",
+    "temperature": 0.3,
+    "max_tokens": 4096,
     "throttle_sec": 0,
     "analysis_concurrency": 4,
     "enrichment_concurrency": 2,
     "languages": [
-      "en"
+      "zh"
     ]
   },
   "processing": {
@@ -258,7 +257,10 @@
         "enabled": true,
         "category": "economics",
         "profile": "economics",
-        "content_extractor": "trafilatura"
+        "content_extractor": "trafilatura",
+        "exclude_title_keywords": [
+          "Reading List"
+        ]
       },
       {
         "name": "Martin Alderson",
@@ -336,7 +338,9 @@
       "recsys",
       "ai-deepdive",
       "ai-agentic",
-      "economics"
+      "economics",
+      "tech-blog",
+      "finance-news"
     ],
     "category_groups": {
       "adtech": {

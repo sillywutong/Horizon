@@ -95,6 +95,14 @@ class RSSScraper(BaseScraper):
                 if not published_at or published_at < since:
                     continue
 
+                title = entry.get("title", "") or ""
+                if source.exclude_title_keywords and any(
+                    keyword.lower() in title.lower()
+                    for keyword in source.exclude_title_keywords
+                ):
+                    logger.info("Skipping %s by title keyword: %s", source.name, title)
+                    continue
+
                 feed_id = str(source.url).split("//")[1].replace("/", "_")
                 entry_id = entry.get("id", entry.get("link", ""))
                 entry_hash = hashlib.sha256(str(entry_id).encode("utf-8")).hexdigest()[:16]
