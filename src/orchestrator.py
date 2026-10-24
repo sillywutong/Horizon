@@ -893,7 +893,8 @@ class HorizonOrchestrator:
             balanced_digest=balanced,
             eligible_count=len(eligible),
         )
-        def _print_analysis_report(
+
+    def _print_analysis_report(
         self,
         analyzed: List[ContentItem],
         selected: List[ContentItem],
