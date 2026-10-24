@@ -1,0 +1,35 @@
+{
+  "id": "baijing",
+  "name": "China Outbound Marketing (Strict)",
+  "display_names": {
+    "zh": "出海营销精选"
+  },
+  "match": "match.md",
+  "analysis": "analysis.md",
+  "content": {
+    "analysis_max_chars": 12000,
+    "enrichment_max_chars": 24000,
+    "sampling": "head-middle-tail"
+  },
+  "enrichment": {
+    "prompt": "enrichment.md",
+    "blocks": [
+      {
+        "id": "summary",
+        "type": "section",
+        "tools": [],
+        "primary": true
+      },
+      {
+        "id": "playbook",
+        "type": "section",
+        "tools": []
+      },
+      {
+        "id": "takeaway",
+        "type": "section",
+        "tools": []
+      }
+    ]
+  }
+}

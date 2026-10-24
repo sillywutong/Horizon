@@ -1,0 +1,40 @@
+{
+  "id": "recsys",
+  "name": "Recommender Systems",
+  "display_names": {
+    "zh": "推荐系统"
+  },
+  "match": "match.md",
+  "analysis": "analysis.md",
+  "content": {
+    "analysis_max_chars": 16000,
+    "enrichment_max_chars": 24000,
+    "sampling": "head-middle-tail"
+  },
+  "enrichment": {
+    "prompt": "enrichment.md",
+    "blocks": [
+      {
+        "id": "background",
+        "type": "section",
+        "tools": []
+      },
+      {
+        "id": "method",
+        "type": "section",
+        "tools": []
+      },
+      {
+        "id": "results",
+        "type": "section",
+        "tools": [],
+        "optional": true
+      },
+      {
+        "id": "takeaway",
+        "type": "section",
+        "tools": []
+      }
+    ]
+  }
+}
