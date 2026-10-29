@@ -61,14 +61,6 @@
   "sources": {
     "rss": [
       {
-        "name": "MDM by Eric Seufert Mini RSS",
-        "url": "https://mdm.co/mdm.rss",
-        "enabled": true,
-        "category": "adtech",
-        "profile": "adtech",
-        "content_extractor": "trafilatura"
-      },
-      {
         "name": "AdExchanger: News and Views on Data-Driven Digital Advertising",
         "url": "https://www.adexchanger.com/feed/",
         "enabled": true,
@@ -95,14 +87,6 @@
       {
         "name": "Digiday",
         "url": "https://digiday.com/feed/",
-        "enabled": true,
-        "category": "adtech",
-        "profile": "adtech",
-        "content_extractor": "trafilatura"
-      },
-      {
-        "name": "AdWeek: AdFreak",
-        "url": "https://feeds.feedburner.com/Adfreak",
         "enabled": true,
         "category": "adtech",
         "profile": "adtech",
@@ -163,14 +147,6 @@
         "category": "adtech",
         "profile": "adtech",
         "content_extractor": "trafilatura"
-      },
-      {
-        "name": "Shopper Marketing",
-        "url": "https://www.adweek.com/taxonomy/term/4167/all/feed/",
-        "enabled": true,
-        "category": "marketing",
-        "content_extractor": "trafilatura",
-        "profile": "adtech"
       },
       {
         "name": "小红书技术REDtech",
