@@ -314,7 +314,8 @@ class HorizonOrchestrator:
             await self.enrich_items(important_items)
 
             # 7. Generate and save daily summaries for each configured language
-            today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+            from zone info import ZoneInfo 
+            today = datetime.now(ZoneInfo("Asia/Shanghai")).strftime("%Y-%m-%d")
             for lang in self.config.ai.languages:
                 summarizer = DailySummarizer(
                     profile_names=self.profiles.names,
